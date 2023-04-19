@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   #get 'static_page/landing'
   #get 'static_page/home'
   #get 'static_page/writing'
