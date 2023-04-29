@@ -5,37 +5,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://fonts.googleapis.rcom/css?family=Inter&display=swap">
     <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <% if user_signed_in? %>
-        <%= current_user.id %>
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Account settings', edit_user_registration_path, class: 'nav-link' %>
-          </li>
-        </ul>
-      <% else %>
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <%= link_to 'Log in', new_user_session_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
-          </li>
-        </ul>
-      <% end %>
-      <%= yield %>
-    </div>
+  <nav class ="navbar navbar-light mynavbar">
+  <% if user_signed_in? %>
+    <span class="navbar-brand"> oète.</span>
+    <%= current_user.id %>
+    <%= link_to 'Write a poem', writing_path %>
+    <%= link_to 'Profile', profile_path %>
+    <%= link_to 'Account settings', edit_user_registration_path %>
+    <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Log in', new_user_session_path %>
+    <%= link_to 'Sign up', new_user_registration_path %>
+    <span class="navbar-brand"> oète.</span>
+  <% end %>
+</nav>
+ <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
   </body>
 </html>
