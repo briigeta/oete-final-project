@@ -17,13 +17,89 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+    background-color: #F5F1EA;
+    font-family: 'Source Serif Pro';
+    
+}
+
 .mynavbar{
     background-color: #F5F1EA;
-    color: #484449;
+    font-family: 'Source Serif Pro';
+    padding-top: 5px;
+    font-size: large;
+    text-decoration: none;
+    margin-left: auto;
 }
+.mynavbar a {
+    color: #8C9086;
+    margin: 15px 10px 0;
+    display: inline-block;
+    text-decoration: none;
+    
+}
+.mynavbar a:hover{
+    color: #0a0a0a;
+    text-decoration: none;
 
+}
 .navbar-brand{
     color: #0a0a0a;
-    font-size: 2rem;
+    font-size: 3.5rem;
+    margin: 0%;
+    font-family: 'Inter';
+    font-weight: 700;
+
+}
+.form-inline {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+  }
+
+ .circular-search {
+    border-radius: 30px;
+  }
+  
+  .form-control {
+    background-color: transparent;
+
 }
 
+.form-control:hover {
+    border-color: #8C9086;
+    box-shadow: none;
+}
+
+button:after {
+    outline-color: transparent;
+  }
+  
+
+.btn-outline-success {
+    background-color: transparent;
+    color: #8C9086;
+  }
+  
+  .btn-outline-success:hover {
+    background-color: transparent;
+    color: #fff;
+  }
+
+  .bi-search {
+    font-size: 2rem;
+    color: #000;
+  }
+  .bi-search:hover{
+    color: #e2dbdb;
+  }
+
+.notice{
+    font-size: 14px;
+    padding: 0px 0px 0px;
+}
+
+.alert{
+    font-size: 14px;
+    padding: 0px 0px 0px;
+}
