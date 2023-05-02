@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users/sign_out', to: "devise/sessions#destroy"
   end
-  root to:"static_page#landing"
+  root 'static_page#index'
   get '/home', to: 'static_page#home'
   get '/writing', to: 'static_page#writing'
   get '/profile', to: 'static_page#profile'

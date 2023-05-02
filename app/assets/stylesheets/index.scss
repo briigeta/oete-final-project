@@ -1,0 +1,43 @@
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.landingm {
+    font-size: 3rem;
+    color: #333;
+    text-align: center;
+    margin-top: 0%;
+    padding: 10px;
+  }
+
+.lead {
+    font-size: 3.5rem;
+    color: #555;
+    text-align: center;
+  
+  }
+  
+  .jumbotron {
+    background-color: #F5F1EA !important;
+  }
+  body {
+    overflow: hidden;
+  }
+  
+  #join-button {
+    background-color: #ABCD78;
+    color: white;
+    border:#ABCD78;
+    font-size: 20px;
+    padding: 10px 20px;
+    
+  }
+
+  #join-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  

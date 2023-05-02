@@ -1,5 +1,5 @@
 class StaticPageController < ApplicationController
-  def landing
+  def index
   end
 
   def home
