@@ -45,12 +45,14 @@ body{
 }
 .navbar-brand{
     color: #0a0a0a;
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin: 0%;
     font-family: 'Inter';
     font-weight: 700;
+    padding: 0px 0px 0px;
 
 }
+
 .form-inline {
     position: absolute;
     right: 0;
@@ -102,4 +104,14 @@ button:after {
 .alert{
     font-size: 14px;
     padding: 0px 0px 0px;
+}
+
+
+.btn-primary {
+  background-color: #ABCD78;
+  color: white;
+}
+
+.row{
+  
 }
