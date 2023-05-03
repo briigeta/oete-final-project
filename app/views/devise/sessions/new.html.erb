@@ -1,0 +1,43 @@
+<% content_for :head do %>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap">
+  <%= stylesheet_link_tag 'devise', media: 'all' %>
+<% end %>
+
+<div class="formbox">
+<div class="formcontainer">
+<h2>Welcome Back!</h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+  <%= f.submit "Log in", class: "btn" %>
+</div>
+
+  <%= render "devise/shared/links" %>
+ <% if user_signed_in? %>
+  <%= link_to "Home", root_path, class: "goback-link" %>
+<% else %>
+  <%= link_to "Go back", root_path, class: "goback-link" %>
+<% end %>
+
+
+  </div>
+  </div>
+<% end %>
+
+

@@ -1,0 +1,26 @@
+<div class="formbox">
+<div class="formcontainer">
+<h2>Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Reset", class: "btn" %>
+  </div>
+
+<%= render "devise/shared/links" %>
+<% if user_signed_in? %>
+  <%= link_to "Home", root_path, class: "goback-link" %>
+<% else %>
+  <%= link_to "Go back", root_path, class: "goback-link" %>
+<% end %>
+
+</div>
+  </div>
+<% end %>

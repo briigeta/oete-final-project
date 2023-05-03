@@ -1,0 +1,129 @@
+h2{
+    color: black;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+
+.formbox{
+    background-color: #F5F1EA;
+}
+
+ .formcontainer {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+.field {
+    margin-bottom: 20px;
+  }
+  
+  .field label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .field input[type="email"],
+  .field input[type="password"],
+  .field input[type="text"]
+   {
+    border-radius: 30px;
+    background-color: transparent;
+    border-color: #ccc;
+    font-size: 16px;
+    height: 25px;
+    width: 300px;
+  }
+  
+  .field input[type="email"]:focus,
+  .field input[type="password"]:focus,
+  .field input[type="text"]:focus {
+    border-color: #ABCD78;
+  }
+  
+  .actions {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .btn {
+    background-color: #ABCD78;
+    color: #F5F1EA;
+    border-radius: 5;
+    padding: 10px 20px;
+  }
+  
+  .login-link {
+    color: #ABCD78;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .login-link:hover {
+    text-decoration: none;
+    color: #555; 
+  }
+  
+  .signup-link{
+    color: #ABCD78;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .signup-link:hover {
+    text-decoration: none;
+    color: #555; 
+  }
+  
+.goback-link{
+    color: #abcd78c1;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.goback-link:hover {
+    text-decoration: none;
+    color: #555; 
+  }
+  
+
+.forgetpassword-link{
+    color: #ABCD78;
+    font-size: 16px;
+}
+.forgetpassword-link:hover {
+    text-decoration: none;
+    color: #555; 
+  }
+
+  .cancel-account button {
+    background-color: #ABCD78;
+    color: #F5F1EA;
+    border-radius: 5;
+    padding: 10px 20px;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  html, body {
+    height: 100%;
+     overflow: overlay;
+  }
+  
+  .wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    flex: 1;
+  }
+  
+  .footer {
+    flex-shrink: 0;
+  }
+  
+ 
