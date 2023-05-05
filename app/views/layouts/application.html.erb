@@ -13,6 +13,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body>
@@ -29,15 +30,16 @@
   </div>
   <% if user_signed_in? %>
   <span class="navbar-brand">oète</span>
-  <%= current_user.username%>
   <%= link_to 'Home', home_path %>
   <%= link_to 'Write a poem', writing_path %>
   <%= link_to 'Profile', profile_path %>
   <%= link_to 'Account settings', edit_user_registration_path %>
   <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
   <% else %>
+   
   <div class="d-flex justify-content-center">
-    <%= link_to 'Log in', new_user_session_path %>
+     <span class="navbar-brand">oète</span>
+     <%= link_to 'Log in', new_user_session_path %>
     <%= link_to 'Sign up', new_user_registration_path %>
     
   </div>

@@ -1,4 +1,25 @@
-<h1>StaticPage#home</h1>
-<p>Find me in app/views/static_page/home.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
 
- 
+  <h1>Welcome to My App</h1>
+  <% if @poems.present? && @poems.any? %>
+    <ul>
+      <% @poems.each do |poem| %>
+        <li>
+          <h2><%= poem.title %></h2>
+          <p><%= poem.body %></p>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No poems yet. Create one now!</p>
+  <% end %>
+  <%= yield %>
+
+</body>
+</html>
+
+
