@@ -1,0 +1,145 @@
+.bannerpic {
+    position: relative;
+    width: 1380px;
+    height: 250px;
+  }
+  
+  .banner-image-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: 100%;
+  }
+   
+  .banner-file-field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .banner-file-field:hover {
+    opacity: 1;
+  }
+
+.profilepic{
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  z-index: 2;
+}
+
+.profile-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 10px solid #f5f1ea;
+    overflow: hidden;
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+  }
+
+  .profile-file-field {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  }
+
+  .profile-file-field:hover {
+    opacity: 1;
+  }
+
+  .profile-info{
+    margin-top: -110px;
+  }
+
+  .username{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+  }
+
+  p{
+    color: black;
+  }
+
+  .location-text{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+  }
+
+  .bio-text{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+  }
+
+  .bio-label-icon {
+    display: flex;
+
+  }
+  
+  .bio-label-icon i {
+    margin-right: 5px; 
+  }
+
+  .location-label-icon {
+    display: flex;
+    
+  }
+  
+  .location-label-icon i {
+    margin-right: 5px;
+  }
+  
+  .location-label{
+    font-weight: bold;
+    color:  #8C9086;
+  }
+
+  .bio-label{
+    font-weight: bold;
+    color:  #8C9086;
+  }
+
+  
+  .pro-card {
+    background-color: white;
+    border: 2px solid  #ABCD78;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    height: 240px; 
+  
+  }
+
+  .pro-card-content {
+    font-size: 10px;
+  
+  }
+
+  .pro-card-title{
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+  }
+  
+

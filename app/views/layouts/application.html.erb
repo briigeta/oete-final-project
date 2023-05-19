@@ -1,60 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>OeteWebsiteFinal</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'devise', media: 'all' %>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application' %>
+<head>
+  <title>Oète</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+   <%= stylesheet_link_tag 'index', 'profile', 'devise', 'writing', 'editprofile',"search","comments", media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'tinymce' %>
+  <script type="text/javascript" src="/assets/tinymce.js"></script>
+</head>
 
-  </head>
-
-  <body>
-  <nav class ="navbar navbar-light mynavbar">
-  <div class="d-flex justify-content-center">
-    <div class="d-flex justify-content-between">
-      <form class="form-inline ml-auto">
-        <input class="form-control mr-sm-2 circular-search" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-        <i class="bi bi-search"></i>
-        </button>
-      </form>
-    </div>
-  </div>
-  <% if user_signed_in? %>
-  <span class="navbar-brand">oète</span>
-  <%= link_to 'Home', home_path %>
-  <%= link_to 'Write a poem', writing_path %>
-  <%= link_to 'Profile', profile_path %>
-  <%= link_to 'Account settings', edit_user_registration_path %>
-  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-  <% else %>
-   
-  <div class="d-flex justify-content-center">
-     <span class="navbar-brand">oète</span>
-     <%= link_to 'Log in', new_user_session_path %>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    
-  </div>
+<body>
+<div id="notification-container">
+  <% flash.each do |type, message| %>
+    <% if type == 'notice' %>
+      <div class="notice">
+        <%= message %>
+      </div>
+    <% elsif type == 'alert' %>
+      <div class="alert">
+        <%= message %>
+      </div>
+    <% end %>
   <% end %>
-</nav>
+</div>
 
- <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <nav class="navbar navbar-light mynavbar">
+    <div class="d-flex justify-content-center">
+      <span class="navbar-brand">oète</span>
+      <div class="d-flex justify-content-between">
+         <form class="form-inline ml-auto">
+           <input class="form-control mr-sm-2 circular-search" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>   
+      
+      </div>
+    </div>
+    <% if user_signed_in? %> 
+     <%= link_to edit_profile_path(current_user) do %>
+  <%= image_tag(current_user.image, class: "nav-profile-image") %>
+<% end %>
+      <%= link_to 'Home', home_path %>
+      <%= link_to 'Write a poem', writing_path %>
+      <%= link_to 'Profile', profile_path %>
+      <%= link_to 'Account settings', edit_user_registration_path %>
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+ 
+    <% else %>
+      <div class="d-flex justify-content-center">
+        <%= link_to 'Log in', new_user_session_path %>
+        <%= link_to 'Sign up', new_user_registration_path %>
+      </div>
+    <% end %>
+  </nav>
+
   <%= yield %>
-<footer class="text-center text-white" style="background-color: #ABCD78; height: 25px; position: absolute; bottom: 0; width: 100%;">
-  <div class="container p-4"></div>
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2023 Copyright:
-    <a class="text-white" style="color: white;" href="https://github.com/briigeta/oete-final-project">oète.com</a>
-  </div>
-</footer>
-  </body>
+
+  <footer class="text-center text-white" style="background-color: #ABCD78; height: 25px; position: absolute; bottom: 0; width: 100%;">
+    <div class="container p-4"></div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 oète.com
+    </div>
+  </footer>
+</body>
 </html>

@@ -1,17 +1,16 @@
 require_relative "boot"
+require_relative "boot"
 
 require "rails/all"
+require "action_text/engine"
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module OeteWebsiteFinal
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
+    config.tinymce.install = :copy
     config.load_defaults 7.0
-    config.assets.compile = true
-
+   
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -19,7 +18,5 @@ module OeteWebsiteFinal
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-   
-
   end
 end

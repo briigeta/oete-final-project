@@ -1,0 +1,47 @@
+.tinymce{
+    width: 600px;
+}
+
+.textarea.tinymce {
+    height: 150px;
+  resize: vertical;
+  }
+
+  .comment {
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .comment-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .comment-header a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .comment-header a:hover {
+    color: gray;
+  }
+  
+  .delete-link {
+    color: red;
+    text-decoration: none;
+    margin-left: auto;
+  }
+  
+  .comment-content {
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,52 @@
+</html>
+<head>
+</head>
+<body class="scroll-container">
+<div class="col-sm-6">
+<div class="card-container-show">
+<div class="card-show">
+<div class="card-body-show">
+ <div class="card-content-show">
+ <h1><%= @poem_post.title %></h1>
+<%= raw @poem_post.content %>
+</div>
+</div>
+</div>
+</div>
+<% if current_user && current_user == @poem_post.user %>
+<div class="edit-delete-container">
+  <%= link_to 'Edit', edit_poem_post_path(@poem_post) %>
+    <%= button_to 'Delete', @poem_post, method: :delete,class: "btn btn-danger" %>
+     </div>
+<% end %>
+</div>
+
+<div class="col-sm-6">
+<div class="comments-section">
+    <h2>Comments</h2>
+
+    <% @poem_post.comments.each do |comment| %>
+ <div class="comment">
+  <div class="comment-header">
+    <%= link_to(profile_path(comment.user)) do %>
+      <%= comment.user.username %>
+    <% end %>
+     <%= link_to "Delete", poem_post_comment_path(@poem_post, comment), method: :delete, class: "delete-link" %>
+  </div>
+  <div class="comment-content">
+    <%= raw comment.content %>
+  </div>
+</div>
+
+<% end %>
+
+    <%= render partial: 'comments/form', locals: { comment: Comment.new, poem_post: @poem_post } %>
+
+  </div>
+</div>
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,33 @@
+
+
+<div class="form-container">
+<h2>Edit Profile</h2>
+<%= form_for(current_user, url: profile_path, method: :patch) do |f| %>
+  <div class="form-group">
+    <%= f.label :banner_image %>
+    <%= f.file_field :banner_image %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :profile_image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :username %>
+    <%= f.text_field :username , class: "username-field" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :bio %>
+    <%= f.text_area :bio , class: "bio-field"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, class: "location-field" %>
+  </div>
+
+  <%= f.submit "Save", class: "save-button"  %>
+<% end %>
+</div>

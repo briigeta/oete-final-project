@@ -1,5 +1,4 @@
 class Comment < ApplicationRecord
-  belongs_to :poem
+  belongs_to :poem_post
   belongs_to :user
-  has_rich_text :body
 end

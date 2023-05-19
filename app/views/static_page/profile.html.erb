@@ -1,2 +1,69 @@
-<h1>StaticPage#profile</h1>
-<p>Find me in app/views/static_page/profile.html.erb</p>
+<body class="scroll-container">
+  <div class="content-container">
+    <div class="bannerpic">
+     <div class="banner-image-container">
+  <% if current_user.banner_image.attached? %>
+    <%= image_tag(current_user.banner_image, class: "banner-image") %>
+  <% else %>
+    <%= image_tag("bannerplaceholder.png", class: "banner-image") %>
+  <% end %>
+</div>
+</div>
+
+
+    <div class="profilepic">
+      <div class="profile-image-container">
+        <% if current_user.image.attached? %>
+          <%= image_tag(current_user.image, class: "profile-image") %>
+        <% else %>
+          <%= image_tag("profileplaceholder.png", class: "profile-image") %>
+        <% end %>
+      </div>
+    </div>
+
+  <div class="col-sm-4">
+    <div class="profile-info">
+          <h3 class="username"><%= current_user.username %></h3>
+          <div class="bio">
+            <div class="bio-label-icon">
+              <i class="bi bi-person-circle"></i>
+              <p class="bio-label">Bio:</p>
+            </div>
+            <p class="bio-text"><%= current_user.bio %></p>
+          </div>
+          <div class="location">
+            <div class="location-label-icon">
+              <i class="bi bi-geo-alt-fill"></i>
+              <p class="location-label">Location:</p>
+            </div>
+            <p class="location-text"><%= current_user.location %></p>
+          </div>
+          <%= link_to "Edit", edit_profile_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-sm-8">
+        <div class="pro-card-view-container">
+          <div class="row">
+            <% current_user.poem_posts.each do |poem_post| %>
+              <div class="col-md-4">
+                <div class="pro-card">
+                  <div class="pro-card-body">
+                    <h2 class="pro-card-title"><%= link_to poem_post.title, poem_post_path(poem_post), style: 'color: black; text-decoration: none;' %></h2>
+                    <div class="pro-card-content">
+                      <%= raw poem_post.content %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+    </footer>
+  </div>
+</body>

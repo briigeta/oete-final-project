@@ -1,0 +1,17 @@
+
+<div class="search-container">
+<h2>Users</h2>
+<div class="usersearchbox">
+  <% @users.each do |user| %>
+<%= link_to user.username, profile_path(user) %></li>
+  <% end %>
+  </div>
+<h2>Poems</h2>
+<div class="poemsearchbox">
+  <% @poems.each do |poem_post| %>
+<%= link_to poem_post.title, poem_post_path(poem_post) %></li>
+  <% end %>
+</div>
+</div>
+
+
